@@ -1,0 +1,54 @@
+ case 'profile':
+        return (
+          <div className={classes.procontainer}>
+            <div>
+              <label className={classes.coverpro} htmlFor="uploadM">
+                <input
+                  type="file"
+                  id="uploadM"
+                  hidden
+                  accept=".png, .jpg, .jpeg"
+                  onChange={props.onChange}
+                  placeholder={props.placeholder}
+                />
+                <div >
+                  {props.placeholder ? <img className={classes.uploadPlace} src={URL.createObjectURL(props.placeholder)} height={60} width={60} /> : <CgProfile className={classes.icon} size="100px" />}
+                </div>
+
+              </label>
+            </div>
+            <div>
+              <AiOutlineCamera
+                id="uploadM"
+                className={classes.uploadIcon}
+              />
+            </div>
+
+          </div>
+
+
+.............................................................
+
+
+ const [imageUrl, setImageUrl] = useState("");
+
+
+
+
+                <div className={classes.profilecontainer}>
+                    <div className={classes.profile}>
+                        {/* {<CgProfile className={classes.icon} size="100px" />} */}
+
+                        <div>
+                            <OPInput
+                                input="profile"
+                                placeholder={imageUrl}
+                                value={imageUrl}
+                                onChange={(e) =>
+                                    e.target.files
+                                        ? setImageUrl(e.target.files[0])
+                                        : setImageUrl(imageUrl)
+                                }
+                            />
+                        </div>
+                    </div>
